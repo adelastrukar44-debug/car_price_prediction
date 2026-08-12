@@ -15,6 +15,8 @@ def _standardize_column_names(df: pd.DataFrame) -> pd.DataFrame:
     for col in df.columns:
         clean_col = col.strip().lower()
  
+        clean_col = clean_col.replace("priceusd", "price_usd")
+        clean_col = clean_col.replace("kilometers", "km")
         clean_col = clean_col.replace("(", "_")
         clean_col = clean_col.replace(")", "")
         clean_col = clean_col.replace("-", "_")
@@ -28,6 +30,8 @@ def _standardize_column_names(df: pd.DataFrame) -> pd.DataFrame:
         new_columns.append(clean_col)
  
     df.columns = new_columns
+   
+     
     return df
 
 # Removing Extra Whitespace from Text Values

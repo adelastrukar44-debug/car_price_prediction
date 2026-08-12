@@ -36,6 +36,15 @@ ORDINAL_FEATURES = ["condition"]
 def get_all_feature_columns() -> list[str]:
     return NUMERIC_FEATURES + CATEGORICAL_FEATURES + ORDINAL_FEATURES
 
+# Split features and targets
+def split_features_and_target(
+    df: pd.DataFrame
+) -> tuple[pd.DataFrame, pd.Series]:
+ 
+    X = df[get_all_feature_columns()].copy()
+    y = df[TARGET_COLUMN].copy()
+ 
+    return X, y
 
 # Numerical transformer
 def _build_numeric_transformer() -> Pipeline:

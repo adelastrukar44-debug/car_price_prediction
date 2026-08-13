@@ -201,49 +201,71 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 6. Run the data preprocessing and feature engineering
+### 6. Train the model
 
-Run the corresponding scripts from the `src` directory to prepare the cleaned dataset.
+The project already contains the cleaned dataset with engineered features in the `data/` directory.
 
-### 7. Train the model
+Run the model training script:
 
 ```bash
-python src/train_model.py
+python src/model_training.py
 ```
 
-This trains the Random Forest model and saves the trained model as:
+This trains the Random Forest Regressor and saves the trained model as:
 
 ```text
 models/car_price_model.joblib
 ```
 
-### 8. Evaluate the model
+### 7. Evaluate the trained model
+
+Run:
 
 ```bash
 python src/model_evaluation.py
 ```
 
-This calculates the regression metrics and displays prediction errors.
+This evaluates the trained model using MAE, MSE, RMSE, and R² metrics and displays prediction errors.
 
-### 9. Compare models
+### 8. Compare regression models
+
+Run:
 
 ```bash
 python src/model_comparison.py
 ```
 
-This trains and compares the four regression algorithms.
+This compares four regression algorithms:
 
-### 10. Explore the results
+* Random Forest Regressor
+* Decision Tree Regressor
+* Gradient Boosting Regressor
+* Linear Regression
 
-Open:
+The comparison results are saved in:
 
 ```text
-notebooks/model_results_visualization.ipynb
+data/model_comparison_results.csv
 ```
 
-to visualize and compare model performance.
+### 9. Visualize the results
 
----
+Open the Jupyter Notebook:
+
+```text
+notebooks/02_model_results_visualization.ipynb
+```
+
+The notebook provides visualizations for comparing the performance of the tested regression models.
+
+### 10. Exploratory Data Analysis
+
+The exploratory analysis can be found in:
+
+```text
+notebooks/01_eda.ipynb
+```
+
 
 ## 🛠️ Technologies
 

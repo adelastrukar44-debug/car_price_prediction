@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 
 from sklearn.ensemble import (
     GradientBoostingRegressor,
@@ -73,8 +74,13 @@ for model_name, regressor in models.items():
         ]
     )
 
-    model.fit(x_train, y_train)
 
+
+    start = time.time()
+
+    model.fit(x_train, y_train)
+    print(f"Training time: {time.time() - start:.2f} seconds")
+    
     y_pred = model.predict(x_test)
 
     mae = mean_absolute_error(y_test, y_pred)

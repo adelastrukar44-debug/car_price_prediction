@@ -12,7 +12,7 @@ NUMERIC_FEATURES = [
     "year",
     "mileage_km",
     "volume_cm3",
-    "car_age"
+    "car_age",
     "engine_volume_liters",
     "mileage_per_year"
 ]
@@ -41,10 +41,10 @@ def split_features_and_target(
     df: pd.DataFrame
 ) -> tuple[pd.DataFrame, pd.Series]:
  
-    X = df[get_all_feature_columns()].copy()
+    x = df[get_all_feature_columns()].copy()
     y = df[TARGET_COLUMN].copy()
  
-    return X, y
+    return x, y
 
 # Numerical transformer
 def _build_numeric_transformer() -> Pipeline:

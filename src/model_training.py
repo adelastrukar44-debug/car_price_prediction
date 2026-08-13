@@ -1,5 +1,6 @@
 import joblib
 import pandas as pd
+import time
  
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
@@ -45,10 +46,12 @@ model = Pipeline(
     ]
 )
 print("Training model...")
- 
+start = time.time()
 model.fit(x_train, y_train)
+print(f"Training time: {time.time() - start:.2f} seconds")
+
 print("Saving model...")
- 
+
 joblib.dump(model, MODEL_PATH)
  
 print(f"Model saved to: {MODEL_PATH}")

@@ -140,6 +140,7 @@ car_price_prediction/
 │
 ├── data/
 │   ├── cars.csv
+│   ├── cleaned_cars.csv
 │   ├── cleaned_cars_with_new_features.csv
 │   └── model_comparison_results.csv
 │
@@ -147,19 +148,20 @@ car_price_prediction/
 │   └── car_price_model.joblib
 │
 ├── notebooks/
-│   └── model_comparison.ipynb
+│   ├── 01_eda.ipynb
+│   └── 02_model_results_visualization.ipynb
 │
 ├── src/
+│   ├── data_cleaning.py
 │   ├── data_preprocessing.py
 │   ├── feature_engineering.py
-│   ├── train_model.py
+│   ├── model_training.py
 │   ├── model_evaluation.py
 │   └── model_comparison.py
 │
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-```
 
 > Note: Trained `.joblib` model files are excluded from Git because of their large file size.
 
@@ -236,7 +238,7 @@ This trains and compares the four regression algorithms.
 Open:
 
 ```text
-notebooks/model_comparison.ipynb
+notebooks/model_results_visualization.ipynb
 ```
 
 to visualize and compare model performance.

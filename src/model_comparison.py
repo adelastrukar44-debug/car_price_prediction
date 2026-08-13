@@ -106,4 +106,9 @@ results_df = results_df.sort_values(
 
 
 print("\nModel comparison:")
+
 print(results_df)
+results_df.to_csv(
+    "data/model_comparison_results.csv",
+    index=False
+)
